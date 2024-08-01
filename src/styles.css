@@ -1,0 +1,170 @@
+/* styles.css */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.video-container {
+  width: 80%;
+  max-width: 960px;
+  position: relative;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.cropper {
+  position: absolute;
+  border: 2px dashed #fff;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: move;
+  box-sizing: border-box;
+  /* Initial size and position (can be adjusted) */
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+}
+
+.resize-handle {
+  position: absolute;
+  background: #fff;
+  cursor: pointer;
+}
+
+.resize-handle.top-left {
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+
+.resize-handle.top-right {
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+
+.resize-handle.bottom-left {
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+
+.resize-handle.bottom-right {
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+
+.resize-handle.top {
+  width: 100%;
+  height: 10px;
+  top: -5px;
+  left: 0;
+  cursor: ns-resize;
+}
+
+.resize-handle.right {
+  width: 10px;
+  height: 100%;
+  top: 0;
+  right: -5px;
+  cursor: ew-resize;
+}
+
+.resize-handle.bottom {
+  width: 100%;
+  height: 10px;
+  bottom: -5px;
+  left: 0;
+  cursor: ns-resize;
+}
+
+.resize-handle.left {
+  width: 10px;
+  height: 100%;
+  top: 0;
+  left: -5px;
+  cursor: ew-resize;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+button,
+select,
+input[type="range"] {
+  background: #444;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover,
+select:hover,
+input[type="range"]:hover {
+  background: #666;
+}
+
+input[type="range"] {
+  width: 100px;
+}
+
+.seekbar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+#seekbar {
+  flex-grow: 1;
+}
+
+#currentTime,
+#duration {
+  font-size: 1em;
+  min-width: 50px;
+  text-align: center;
+}
+
+.preview-container {
+  width: 200px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  margin-left: 20px; /* Space between video and preview */
+}
+
+#previewCanvas {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Player</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="video-container">
+      <video id="videoPlayer" width="100%" height="auto" controls>
+        <source
+          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div id="cropper" class="cropper">
+        <div class="resize-handle top-left"></div>
+        <div class="resize-handle top-right"></div>
+        <div class="resize-handle bottom-left"></div>
+        <div class="resize-handle bottom-right"></div>
+        <div class="resize-handle top"></div>
+        <div class="resize-handle right"></div>
+        <div class="resize-handle bottom"></div>
+        <div class="resize-handle left"></div>
+      </div>
+      <div class="controls">
+        <button id="playPauseBtn">Play</button>
+        <button id="seekBackBtn">Rewind 10s</button>
+        <button id="seekForwardBtn">Forward 10s</button>
+        <label for="playbackRate">Speed:</label>
+        <select id="playbackRate">
+          <option value="0.5">0.5x</option>
+          <option value="1" selected>1x</option>
+          <option value="1.5">1.5x</option>
+          <option value="2">2x</option>
+        </select>
+        <label for="volumeControl">Volume:</label>
+        <input
+          id="volumeControl"
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
+          value="1"
+        />
+        <div class="seekbar-container">
+          <input
+            id="seekbar"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+          />
+          <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+        </div>
+        <label for="aspectRatio">Aspect Ratio:</label>
+        <select id="aspectRatio">
+          <option value="9:18">9:18</option>
+          <option value="9:16">9:16</option>
+          <option value="4:3">4:3</option>
+          <option value="3:4">3:4</option>
+          <option value="1:1">1:1</option>
+          <option value="4:5">4:5</option>
+        </select>
+      </div>
+    </div>
+    <div class="preview-container">
+      <canvas id="previewCanvas"></canvas>
+    </div>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>
